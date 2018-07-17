@@ -132,4 +132,4 @@ client.on('message', async (message) => {
 	}
 })
 
-client.login(JSON.parse(ofs.readFileSync(path.join(__dirname, 'config.json'))).token)
+client.login('NDYwMzM4MDcwMzExNDAzNTIx.Di8MGw.ZU3PWYifg9N3_mnSR2Vmu9cvHBA')
