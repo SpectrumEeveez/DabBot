@@ -108,7 +108,22 @@ client.on('message', async (message) => {
 		let sentM = await message.channel.send(createRichEmbed('Savage Dab', 'Congratulations, you\'ve just dabbed!'))
 
 		senderData.dabs++
+		
+		recentDabs.push(message.member)
+		message.guild.createRole({
+          data: {
+            name: 'Master Dabbers',
+            hoist: true,
+            mentionable: false,
+          },
+        });
+		let sentM = await message.channel.send(createRichEmbed('Master Dab', 'Congratulations, you\'ve just become a Master Dabber!'))
+		let role = message.guild.roles.find("Master Dabbers");
+		member.addRole(role).catch(console.error);
+		
+		senderData = dabs+++
 
+								       
 		await memberData.setMember(message.member.id, senderData)
 
 		await poky(2000)
